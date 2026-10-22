@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Com carinho — Afeto e Café</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="cabecalho" id="inicio">
+    <a href="#inicio" class="marca">
+      <!-- Logotipo: cookie vazado + copo térmico -->
+      <svg class="logo" viewBox="0 0 100 100"
+           xmlns="http://www.w3.org/2000/svg"
+           aria-label="Cookie vazado com copo térmico">
+        <path d="M48 12 A36 36 0 1 0 85 49
+                 A15 15 0 0 1 70 30
+                 A15 15 0 0 1 48 12 Z"
+              fill="none" stroke="currentColor"
+              stroke-width="5" stroke-linejoin="round"/>
+        <circle cx="29" cy="35" r="3" fill="currentColor"/>
+        <circle cx="47" cy="52" r="3" fill="currentColor"/>
+        <circle cx="29" cy="65" r="3" fill="currentColor"/>
+        <circle cx="52" cy="76" r="3" fill="currentColor"/>
+        <path d="M60 43 H79 L76 76 Q75 81 70 81
+                 H65 Q60 81 60 76 Z"
+              fill="#F5EBDD" stroke="currentColor"
+              stroke-width="3" stroke-linejoin="round"/>
+        <path d="M62 51 H77 M64 43 V37 H76 V43"
+              fill="none" stroke="currentColor"
+              stroke-width="3" stroke-linecap="round"/>
+      </svg>
+
+      <span>
+        <strong>Com carinho</strong>
+        <small>Afeto e Café</small>
+      </span>
+    </a>
+
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#pedido">Meu pedido</a>
+    </nav>
+
+    <a class="link-sacola" href="#pedido">
+      Sacola (<span id="total-itens">0</span>)
+    </a>
+  </header>
+
+  <main>
+    <section class="banner">
+      <div class="banner-texto">
+        <span class="etiqueta">PEQUENOS PRESENTES, GRANDES AFETOS</span>
+        <h1>Um café quentinho,<br>um carinho em forma<br>de presente.</h1>
+        <p>
+          Canecas e copos especiais para tornar
+          os momentos simples ainda mais inesquecíveis.
+        </p>
+        <a href="#produtos" class="botao">Encontre seu carinho</a>
+      </div>
+
+      <div class="banner-imagem">
+        <img
+          src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=900&q=85"
+          alt="Caneca de café em um momento aconchegante">
+      </div>
+    </section>
+
+    <section class="catalogo" id="produtos">
+      <div class="titulo-secao">
+        <span class="etiqueta">FEITOS PARA PRESENTEAR</span>
+        <h2>Encontre seu favorito</h2>
+        <p>Um mimo para você ou para alguém especial.</p>
+      </div>
+
+      <div class="barra-busca">
+        <input
+          type="search"
+          id="busca"
+          placeholder="Buscar canecas, copos..."
+          aria-label="Buscar produtos">
+        <button type="button" id="limpar-busca">Limpar</button>
+      </div>
+
+      <div class="produtos" id="lista-produtos">
+        <!-- Os produtos são criados pelo JavaScript -->
+      </div>
+
+      <p id="mensagem-vazia" hidden>
+        Não encontramos produtos com esse nome.
+      </p>
+    </section>
+
+    <section class="pedido" id="pedido">
+      <div class="pedido-intro">
+        <span class="etiqueta">SEU PRESENTE COMEÇA AQUI</span>
+        <h2>Monte seu pedido</h2>
+        <p>
+          Escolha seus produtos, confira os valores
+          e preencha seus dados para finalizar.
+        </p>
+      </div>
+
+      <div class="pedido-conteudo">
+        <div class="resumo">
+          <h3>Resumo da sacola</h3>
+          <div id="itens-pedido">
+            <p class="sacola-vazia">
+              Sua sacola está esperando um carinho!
+            </p>
+          </div>
+
+          <div class="total">
+            <span>Total</span>
+            <strong id="valor-total">R$ 0,00</strong>
+          </div>
+        </div>
+
+        <form id="form-pedido">
+          <h3>Seus dados</h3>
+
+          <label for="nome">Nome completo</label>
+          <input id="nome" name="nome" required
+                 placeholder="Como podemos chamar você?">
+
+          <label for="telefone">Telefone / WhatsApp</label>
+          <input id="telefone" name="telefone"
+                 type="tel" required
+                 placeholder="(00) 00000-0000">
+
+          <label for="entrega">Forma de recebimento</label>
+          <select id="entrega" name="entrega" required>
+            <option value="">Selecione uma opção</option>
+            <option value="Entrega">Entrega</option>
+            <option value="Retirada">Retirada</option>
+          </select>
+
+          <label for="endereco">Endereço ou observações</label>
+          <textarea id="endereco" name="endereco" rows="3"
+                    placeholder="Endereço, personalização ou recado"></textarea>
+
+          <button type="submit" class="botao botao-enviar">
+            Enviar pedido pelo WhatsApp
+          </button>
+
+          <p class="aviso">
+            O pedido será enviado para confirmação.
+            Frete e pagamento serão combinados com a loja.
+          </p>
+          <p id="aviso-form" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#inicio" class="rodape-marca">Com carinho</a>
+    <p>Afeto e Café — presentes escolhidos com amor.</p>
+    <small>© 2026 Com carinho. Todos os direitos reservados.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
